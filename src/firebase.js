@@ -1,16 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue, push, update } from "firebase/database";
 
-// TODO: Replace with your Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyA4emZ7G2Tx9SRWoZ5rVeTwScVvuipqK4E",
-  authDomain: "fir-demo-e7e9f.firebaseapp.com",
-  databaseURL:
-    "https://fir-demo-e7e9f-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "fir-demo-e7e9f",
-  storageBucket: "fir-demo-e7e9f.firebasestorage.app",
-  messagingSenderId: "888236515869",
-  appId: "1:888236515869:web:a7280f017a26ed5e685cf4",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
